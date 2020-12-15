@@ -1,3 +1,8 @@
+<h1 align="center"> Netflix Clone</h1>
+<p align="center">
+  <img style="text-align:center" src="https://raw.githubusercontent.com/saiteja-madha/netflix-clone/master/public/Preview.gif" />
+</p>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
