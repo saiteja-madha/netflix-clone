@@ -3,6 +3,11 @@
   <img style="text-align:center" src="https://raw.githubusercontent.com/saiteja-madha/netflix-clone/master/public/Preview.gif" />
 </p>
 
+# Demo
+<p align="center">
+  <img style="text-align:center" src="https://raw.githubusercontent.com/saiteja-madha/netflix-clone/master/public/netflix_home.PNG" />
+</p>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
