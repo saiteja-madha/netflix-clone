@@ -44,19 +44,15 @@ function Row({ title, fetchUrl, isPoster }) {
 
   return (
     <div className="row">
-      <h2 className={`row__title${isPoster ? " row__titlePrimary" : ""}`}>
-        {title}
-      </h2>
+      <h2 className={`row__title${isPoster ? " row__titlePrimary" : ""}`}>{title}</h2>
 
       <div className="row__thumbnails">
         {movies.map((movie) => (
-          <img
+          <AsyncImage
             key={movie.id}
             onClick={() => handleClick(movie)}
             className={`row__thumbnail${isPoster ? " row__poster" : ""}`}
-            src={`${IMAGE_BASE_URL}${
-              isPoster ? movie.poster_path : movie.backdrop_path
-            }`}
+            src={`${IMAGE_BASE_URL}${isPoster ? movie.poster_path : movie.backdrop_path}`}
             alt={movie.name}
           />
         ))}
@@ -66,5 +62,27 @@ function Row({ title, fetchUrl, isPoster }) {
     </div>
   );
 }
+
+const AsyncImage = (props) => {
+  const [loadedSrc, setLoadedSrc] = React.useState(null);
+  React.useEffect(() => {
+    setLoadedSrc(null);
+    if (props.src) {
+      const handleLoad = () => {
+        setLoadedSrc(props.src);
+      };
+      const image = new Image();
+      image.addEventListener("load", handleLoad);
+      image.src = props.src;
+      return () => {
+        image.removeEventListener("load", handleLoad);
+      };
+    }
+  }, [props.src]);
+  if (loadedSrc === props.src) {
+    return <img {...props} alt="banner" />;
+  }
+  return null;
+};
 
 export default Row;
