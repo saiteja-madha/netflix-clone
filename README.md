@@ -4,7 +4,7 @@
 </p>
 
 # Demo
-Live Demo: _Coming soon_
+Live Demo: _To Be Updated_
 <p align="center">
   <img style="text-align:center" src="https://raw.githubusercontent.com/saiteja-madha/netflix-clone/master/public/netflix_home.PNG" />
 </p>
